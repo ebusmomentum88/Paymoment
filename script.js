@@ -1,8 +1,8 @@
-const API_BASE_URL = "https://ebuspaybackend-1.onrender.com/api";
+const API_BASE_URL = "https://paymomentbackend.onrender.com/api";
 const PAYSTACK_PUBLIC_KEY = "pk_live_6285198feb88d1bf9515732e6eea990012a8344e";
 
-let authToken = localStorage.getItem("ebuspay_token");
-let currentUser = JSON.parse(localStorage.getItem("ebuspay_user")) || null;
+let authToken = localStorage.getItem("Paymoment_token");
+let currentUser = JSON.parse(localStorage.getItem("Paymoment_user")) || null;
 
 // Initialize
 document.addEventListener("DOMContentLoaded", () => {
@@ -82,8 +82,8 @@ async function handleLogin(e){
     if(res.ok){
       authToken=data.token;
       currentUser=data.user;
-      localStorage.setItem("ebuspay_token",authToken);
-      localStorage.setItem("ebuspay_user",JSON.stringify(currentUser));
+      localStorage.setItem("Paymoment_token",authToken);
+      localStorage.setItem("Paymoment_user",JSON.stringify(currentUser));
       updateNavbar(); showDashboard(); loadUserData();
     } else alert(data.message||"Login failed");
   }catch(err){ console.error(err); alert("Login error"); }
@@ -91,8 +91,8 @@ async function handleLogin(e){
 
 // Logout
 function handleLogout(){
-  localStorage.removeItem("ebuspay_token");
-  localStorage.removeItem("ebuspay_user");
+  localStorage.removeItem("Paymoment_token");
+  localStorage.removeItem("Paymoment_user");
   authToken=null; currentUser=null;
   updateNavbar();
   showAuth();
@@ -164,7 +164,7 @@ function handleDeposit(e){
     email: currentUser.email,
     amount: amount * 100,
     currency: "NGN",
-    ref: "EBUS_" + Math.floor(Math.random()*1000000000),
+    ref: "PAY_" + Math.floor(Math.random()*1000000000),
     onClose: function(){ alert("Transaction cancelled"); },
     callback: function(response){ verifyPayment(response.reference, amount); }
   });
@@ -203,3 +203,4 @@ async function processDeposit(amount, reference){
     else alert(data.message || "Deposit failed");
   }catch(err){ console.error(err); alert("Error processing deposit."); }
 }
+
