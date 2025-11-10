@@ -1,0 +1,318 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f5f6fa;
+  color: #333;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: #2d3436;
+  padding: 15px 30px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00cec9;
+}
+
+.nav-links a, .nav-links button, .nav-links span {
+  font-size: 1.1rem;
+  margin-left: 15px;
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-links button:hover, .nav-links a:hover {
+  color: #00cec9;
+}
+
+/* ===== Auth Container ===== */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: 80vh;
+}
+
+.auth-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.auth-card h2 {
+  color: #2d3436;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #636e72;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display:block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dfe6e9;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: #00cec9;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  background: #00b894;
+}
+
+.switch-auth {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.switch-auth a {
+  color: #00cec9;
+  text-decoration: none;
+}
+
+/* ===== Dashboard ===== */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.welcome-section h1 {
+  font-size: 2rem;
+  color: #2d3436;
+}
+
+.user-email {
+  color: #636e72;
+  margin-bottom: 20px;
+}
+
+.balance-card {
+  background: #00cec9;
+  color: #fff;
+  border-radius: 15px;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.balance-card h2 {
+  font-size: 1.8rem;
+}
+
+.btn-deposit {
+  background: #0984e3;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-deposit:hover {
+  background: #74b9ff;
+}
+
+/* Transactions */
+.transactions-section h3 {
+  margin-bottom: 15px;
+}
+
+.transactions-list {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #dfe6e9;
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-info h4 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.transaction-info p {
+  font-size: 0.85rem;
+  color: #636e72;
+}
+
+.transaction-amount {
+  font-weight: bold;
+  color: #2d3436;
+}
+
+/* ===== News Section ===== */
+.news-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-card img.news-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  object-fit: cover;
+  max-height: 180px;
+}
+
+.news-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.news-card .news-content {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  overflow: hidden;
+  max-height: 80px;
+  transition: max-height 0.3s ease;
+}
+
+.news-card .read-more {
+  margin-top: 8px;
+  color: #0984e3;
+  cursor: pointer;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.news-card.expanded .news-content {
+  max-height: 1000px;
+}
+
+/* ===== Modal ===== */
+.modal {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.5);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index: 9999;
+}
+
+.modal.active {
+  display:flex;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 15px;
+  width: 350px;
+  max-width: 90%;
+  position: relative;
+}
+
+.modal-header {
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  font-size: 1.5rem;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+/* Buttons */
+.btn-secondary {
+  background: #d63031;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border:none;
+  cursor:pointer;
+}
+
+.btn-secondary:hover {
+  background: #e17055;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .transactions-list, .balance-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .balance-card h2 { margin-bottom: 10px; }
+}
